@@ -1,0 +1,243 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Hatiya Gym & Fitness Center — Hetauda, Makawanpur</title>
+  <meta name="description" content="Hatiya Gym & Fitness Center — 2-floor gym in Hetauda 16, Chisapani, Makawanpur District, Nepal. Cardio floor & weight floor. Open 4:00 AM — 9:00 PM." />
+
+  <style>
+    :root {
+      --accent: #ff6b6b;
+      --dark: #0f1724;
+      --muted: #6b7280;
+      --card: #ffffff;
+      font-family: Inter, system-ui, sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background: url("1000014493.jpg") no-repeat center center fixed;
+      background-size: cover;
+      color: var(--dark);
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.4);
+      z-index: -1;
+    }
+
+    .container { max-width: 1000px; margin: 32px auto; padding: 20px; }
+
+    header {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      margin-bottom: 20px;
+      background: rgba(255,255,255,0.8);
+      border-radius: 12px;
+      padding: 10px 16px;
+    }
+
+    .logo {
+      width: 78px;
+      height: 78px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, var(--accent), #ff9a6b);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: 700;
+      font-size: 20px;
+      overflow: hidden;
+    }
+
+    .logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    h1 { margin: 0; font-size: 24px; }
+    p.lead { margin: 6px 0 0; color: var(--muted); }
+
+    .card {
+      background: var(--card);
+      border-radius: 12px;
+      padding: 18px;
+      box-shadow: 0 6px 18px rgba(16,24,40,0.06);
+      margin-bottom: 16px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 10px 14px;
+      border-radius: 10px;
+      font-weight: 700;
+      cursor: pointer;
+      text-align: center;
+      margin: 6px;
+      transition: 0.3s;
+    }
+
+    .btn.primary { background: var(--accent); color: white; border: none; }
+    .btn.primary:hover { opacity: 0.9; }
+    .btn.ghost { border: 2px solid #ccc; background: white; color: var(--dark); }
+    .btn.ghost:hover { background: #f0f0f0; }
+
+    /* Floor images */
+    .floor-img {
+      width: 100%;
+      max-width: 400px;
+      border-radius: 12px;
+      margin: 8px 0;
+      display: block;
+    }
+
+    /* Accordion panel */
+    .panel {
+      display: none;
+      padding: 10px 16px;
+      background: #fff;
+      color: #333;
+    }
+
+    /* Nested floor buttons container */
+    .nested-buttons { margin: 10px 0; display: none; }
+
+    /* Contact links */
+    .contact-info a {
+      display: block;
+      margin: 6px 0;
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .contact-info a:hover { text-decoration: underline; }
+
+    footer {
+      text-align: center;
+      color: var(--muted);
+      font-size: 13px;
+      margin-top: 20px;
+    }
+
+    iframe {
+      border-radius: 8px;
+      margin-top: 8px;
+    }
+
+    @media (max-width: 600px) { h1 { font-size: 20px; } }
+  </style>
+
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="logo">
+        <img src="1000014491.jpg" alt="Hatiya Gym Logo">
+      </div>
+      <div>
+        <h1>Hatiya Gym &amp; Fitness Center</h1>
+        <p class="lead">Hetauda 16, Chisapani — Makawanpur Nepal</p>
+      </div>
+    </header>
+
+```
+<div class="card" style="text-align:center;">
+  <h2>Train Smart. Train Strong.</h2>
+  <p>Clean equipment • Certified trainers • Flexible timings</p>
+  <button class="btn primary" onclick="toggleSection('membership')">Membership & FAQ</button>
+  <button class="btn ghost" onclick="toggleFloors()">🏋️ Floors & Equipment</button>
+  <div class="nested-buttons" id="floor-buttons">
+    <button class="btn ghost" onclick="toggleSection('first-floor')">1️⃣ First Floor</button>
+    <button class="btn ghost" onclick="toggleSection('second-floor')">2️⃣ Second Floor</button>
+  </div>
+  <button class="btn ghost" onclick="toggleSection('contact')">📞 Contact</button>
+  <button class="btn primary" onclick="toggleSection('map')">View Location</button>
+</div>
+
+<!-- Membership Panel -->
+<div id="membership" class="card panel">
+  <h3>Membership & FAQ</h3>
+  <ul>
+    <li><b>Day Pass:</b> One day access to all equipment.</li>
+    <li><b>Monthly:</b> Unlimited access; priority trainer booking.</li>
+    <li><b>Trainer Availability:</b> Certified trainers during peak hours.</li>
+    <li><b>Sanitization:</b> Daily cleaning and midday wipe-downs.</li>
+    <li><b>Beginners Welcome:</b> Orientation sessions included.</li>
+  </ul>
+</div>
+
+<!-- First Floor Panel -->
+<div id="first-floor" class="card panel">
+  <h3>1️⃣ First Floor — Cardio Zone</h3>
+  <p>Treadmills, bikes, rowing machines, and stretching area.</p>
+  <img src="Crossfit-Gym.jpg" alt="area" class="floor-img">
+  <img src="PRIMAL_TREADMILL.webp" alt="Treadmills" class="floor-img">
+  <img src="bikes.avif" alt="bike" class="floor-img">
+</div>
+
+<!-- Second Floor Panel -->
+<div id="second-floor" class="card panel">
+  <h3>2️⃣ Second Floor — Weight & Strength</h3>
+  <p>Free weights, squat racks, cable machines, and functional training zone.</p>
+  <img src="dumbbells.jpg" alt="Dumbbells" class="floor-img">
+  <img src="FT-UGC-1.webp" alt="Weight Floor" class="floor-img">
+  <img src="DSC06524-web_400X400.webp" alt="Functional Training" class="floor-img">
+</div>
+
+<!-- Contact Panel -->
+<div id="contact" class="card panel">
+  <h3>Contact Us</h3>
+  <div class="contact-info">
+    <a href="tel:+9779800000000">📞Phone:9800000000</a>
+    <a href="mailto:hatiyagym@gmail.com">✉ Email: hatiyagym@gmail.com</a>
+    <a href="https://wa.me/9779800000000" target="_blank">💬WhatsApp</a>
+  </div>
+</div>
+
+<!-- Map Panel -->
+<div id="map" class="card panel">
+  <h3>Find Us</h3>
+  <p>Hetauda 16, Chisapani, Makawanpur, Nepal</p>
+  <iframe 
+    src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d295.3033394871736!2d85.08527366964648!3d27.3786148144787!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1sen!2snp!4v1762516614532!5m2!1sen!2snp"
+    width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy">
+  </iframe>
+  <p>Open daily from <b>4:00 AM</b> to <b>9:00 PM</b>.</p>
+</div>
+
+<footer>
+  &copy; <span id="year"></span> Hatiya Gym &amp; Fitness Center — Hetauda, Makawanpur
+</footer>
+```
+
+  </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    function toggleSection(id) {
+      const sections = document.querySelectorAll('.panel');
+      sections.forEach(sec => {
+        sec.style.display = sec.id === id ? (sec.style.display === 'block' ? 'none' : 'block') : 'none';
+      });
+    }
+
+    function toggleFloors() {
+      const floorButtons = document.getElementById('floor-buttons');
+      floorButtons.style.display = floorButtons.style.display === 'block' ? 'none' : 'block';
+    }
+  </script>
+
+</body>
+</html>
